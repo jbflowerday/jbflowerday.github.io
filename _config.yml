@@ -2,4 +2,6 @@ title: Jack Flowerday
 exclude:
   - scripts
   - README.md
+  - PRODUCT.md
+  - DESIGN.md
   - _template

@@ -1,0 +1,486 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-17T11:30:38+00:00",
+  "title": "Design System: Jack Flowerday",
+  "extensions": {
+    "colorMeta": {
+      "survey-paper": {
+        "role": "neutral",
+        "displayName": "Survey Paper",
+        "canonical": "oklch(95.1% 0.011 123.5)",
+        "tonalRamp": [
+          "#0a0c07",
+          "#242620",
+          "#41433d",
+          "#60625c",
+          "#81837c",
+          "#a3a69f",
+          "#c7cac3",
+          "#edf0e8"
+        ]
+      },
+      "survey-paper-raised": {
+        "role": "neutral",
+        "displayName": "Survey Paper Raised",
+        "canonical": "oklch(97.6% 0.007 124.4)",
+        "tonalRamp": [
+          "#0a0c09",
+          "#242622",
+          "#41433f",
+          "#60625e",
+          "#81837f",
+          "#a4a6a1",
+          "#c8cac5",
+          "#edefea"
+        ]
+      },
+      "lowland-sage": {
+        "role": "neutral",
+        "displayName": "Lowland Sage",
+        "canonical": "oklch(89.6% 0.031 129.8)",
+        "tonalRamp": [
+          "#070e02",
+          "#202818",
+          "#3d4534",
+          "#5c6553",
+          "#7c8673",
+          "#9fa995",
+          "#c3cdb9",
+          "#e8f3de"
+        ]
+      },
+      "drafting-ink": {
+        "role": "primary",
+        "displayName": "Drafting Ink",
+        "canonical": "oklch(27.4% 0.026 241.9)",
+        "tonalRamp": [
+          "#030c15",
+          "#1a2731",
+          "#36444f",
+          "#55636f",
+          "#758591",
+          "#97a7b4",
+          "#bbccd9",
+          "#e0f1ff"
+        ]
+      },
+      "pencil-grey": {
+        "role": "neutral",
+        "displayName": "Pencil Grey",
+        "canonical": "oklch(49.7% 0.023 234.3)",
+        "tonalRamp": [
+          "#030d13",
+          "#1a272f",
+          "#36444d",
+          "#55646d",
+          "#75858e",
+          "#98a8b2",
+          "#bbccd6",
+          "#e0f2fc"
+        ]
+      },
+      "ink-rule": {
+        "role": "neutral",
+        "displayName": "Ink Rule",
+        "canonical": "oklch(27.4% 0.026 241.9 / 0.15)",
+        "tonalRamp": [
+          "#030c15",
+          "#1a2731",
+          "#36444f",
+          "#55636f",
+          "#758591",
+          "#97a7b4",
+          "#bbccd9",
+          "#e0f1ff"
+        ]
+      },
+      "contour-umber": {
+        "role": "secondary",
+        "displayName": "Contour Umber",
+        "canonical": "oklch(61.8% 0.080 62.8)",
+        "tonalRamp": [
+          "#200000",
+          "#3f1900",
+          "#5f370a",
+          "#81572e",
+          "#a4784f",
+          "#c99a71",
+          "#efbe93",
+          "#ffe4b8"
+        ]
+      },
+      "contour-label-umber": {
+        "role": "secondary",
+        "displayName": "Contour Label Umber",
+        "canonical": "oklch(53.0% 0.080 62.0)",
+        "tonalRamp": [
+          "#200000",
+          "#3f1900",
+          "#5f370b",
+          "#82562e",
+          "#a5774f",
+          "#ca9a71",
+          "#efbe94",
+          "#ffe3b8"
+        ]
+      },
+      "watercourse-blue": {
+        "role": "secondary",
+        "displayName": "Watercourse Blue",
+        "canonical": "oklch(50.0% 0.124 249.7)",
+        "tonalRamp": [
+          "#00003c",
+          "#00225d",
+          "#004380",
+          "#1a64a4",
+          "#4186c9",
+          "#64aaef",
+          "#88cfff",
+          "#adf5ff"
+        ]
+      },
+      "line-of-sight-marigold": {
+        "role": "tertiary",
+        "displayName": "Line-of-Sight Marigold",
+        "canonical": "oklch(75.5% 0.152 78.6)",
+        "tonalRamp": [
+          "#280000",
+          "#490e00",
+          "#6b3000",
+          "#8e5200",
+          "#b27400",
+          "#d89700",
+          "#febc42",
+          "#ffe16d"
+        ]
+      },
+      "night-paper": {
+        "role": "neutral",
+        "displayName": "Night Paper",
+        "canonical": "oklch(20.8% 0.013 233.3)",
+        "tonalRamp": [
+          "#060c10",
+          "#1f262a",
+          "#3b4348",
+          "#5a6368",
+          "#7b8489",
+          "#9da7ac",
+          "#c1cbd0",
+          "#e6f0f6"
+        ]
+      },
+      "night-paper-raised": {
+        "role": "neutral",
+        "displayName": "Night Paper Raised",
+        "canonical": "oklch(25.0% 0.019 239.1)",
+        "tonalRamp": [
+          "#040c12",
+          "#1c272e",
+          "#39444b",
+          "#57636b",
+          "#78848d",
+          "#9aa7b0",
+          "#becbd5",
+          "#e3f1fa"
+        ]
+      },
+      "night-lowland": {
+        "role": "neutral",
+        "displayName": "Night Lowland",
+        "canonical": "oklch(27.4% 0.022 166.5)",
+        "tonalRamp": [
+          "#030e09",
+          "#1b2923",
+          "#37463f",
+          "#56655e",
+          "#76877f",
+          "#99aaa2",
+          "#bccec6",
+          "#e1f4eb"
+        ]
+      },
+      "night-ink": {
+        "role": "primary",
+        "displayName": "Night Ink",
+        "canonical": "oklch(92.8% 0.011 136.6)",
+        "tonalRamp": [
+          "#090c08",
+          "#232621",
+          "#3f433e",
+          "#5e635d",
+          "#7f847e",
+          "#a2a7a0",
+          "#c6cbc4",
+          "#ebf0e9"
+        ]
+      },
+      "night-pencil": {
+        "role": "neutral",
+        "displayName": "Night Pencil",
+        "canonical": "oklch(71.7% 0.016 175.5)",
+        "tonalRamp": [
+          "#050d0b",
+          "#1d2825",
+          "#3a4541",
+          "#586461",
+          "#798682",
+          "#9ba8a4",
+          "#bfcdc8",
+          "#e4f2ee"
+        ]
+      },
+      "night-rule": {
+        "role": "neutral",
+        "displayName": "Night Rule",
+        "canonical": "oklch(92.8% 0.011 136.6 / 0.15)",
+        "tonalRamp": [
+          "#090c08",
+          "#232621",
+          "#3f433e",
+          "#5e635d",
+          "#7f847e",
+          "#a2a7a0",
+          "#c6cbc4",
+          "#ebf0e9"
+        ]
+      },
+      "night-contour": {
+        "role": "secondary",
+        "displayName": "Night Contour",
+        "canonical": "oklch(54.9% 0.061 65.1)",
+        "tonalRamp": [
+          "#1b0400",
+          "#391e00",
+          "#583b1d",
+          "#795a3c",
+          "#9c7b5c",
+          "#c09e7d",
+          "#e5c2a0",
+          "#ffe7c5"
+        ]
+      },
+      "night-contour-label": {
+        "role": "secondary",
+        "displayName": "Night Contour Label",
+        "canonical": "oklch(63.9% 0.065 64.6)",
+        "tonalRamp": [
+          "#1c0300",
+          "#3a1d00",
+          "#5a3a19",
+          "#7b5938",
+          "#9e7a59",
+          "#c29d7a",
+          "#e8c19d",
+          "#ffe6c2"
+        ]
+      },
+      "night-watercourse": {
+        "role": "secondary",
+        "displayName": "Night Watercourse",
+        "canonical": "oklch(76.5% 0.089 245.1)",
+        "tonalRamp": [
+          "#00092d",
+          "#00274d",
+          "#0a456e",
+          "#306690",
+          "#5288b4",
+          "#75abd9",
+          "#98d0ff",
+          "#bdf6ff"
+        ]
+      },
+      "night-marigold": {
+        "role": "tertiary",
+        "displayName": "Night Marigold",
+        "canonical": "oklch(80.7% 0.148 81.5)",
+        "tonalRamp": [
+          "#260000",
+          "#461200",
+          "#683300",
+          "#8a5400",
+          "#ae7600",
+          "#d39a03",
+          "#fabe46",
+          "#ffe470"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The name on the home page only."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Project name on overview pages."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Section headings."
+      },
+      "subtitle": {
+        "displayName": "Subtitle",
+        "purpose": "Sub-headings, feature names and project tile titles."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "All reading text, about 34 to 38em per line."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "One-sentence description under a page title, in pencil grey."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Fact values, buttons and the kind line."
+      },
+      "code": {
+        "displayName": "Code",
+        "purpose": "Code blocks and inline code only."
+      }
+    },
+    "shadows": [
+      {
+        "name": "icon-ring",
+        "value": "0 0 0 1px var(--rule)",
+        "purpose": "Hairline ring around app icons; the only box-shadow in the system."
+      }
+    ],
+    "motion": [
+      {
+        "name": "line-of-sight-draw",
+        "value": "1.6s cubic-bezier(.6, 0, .2, 1) 0.3s",
+        "purpose": "The hero line of sight draws once on load; skipped under reduced motion."
+      },
+      {
+        "name": "appear",
+        "value": "0.5s ease-out 1.7s",
+        "purpose": "Far end point and Fresnel ellipse fade in after the line lands."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "compact",
+        "value": "640px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one main action on an overview page, such as Support or View on GitHub.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\"><svg viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38v-1.49c-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8z\"/></svg>View on GitHub</a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 9px 18px; border-radius: 3px; border: 1.5px solid var(--ink, #1c2933); background: var(--ink, #1c2933); color: var(--paper, #edf0e8); font: 600 1rem/1.55 \"Barlow\", system-ui, sans-serif; text-decoration: none; } .ds-btn-primary svg { width: 18px; height: 18px; fill: currentColor; } .ds-btn-primary:hover { background: var(--water, #1d66a6); border-color: var(--water, #1d66a6); } .ds-btn-primary:focus-visible { outline: 2px solid var(--water, #1d66a6); outline-offset: 3px; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Every other action, such as Privacy policy or Website.",
+      "html": "<a class=\"ds-btn-secondary\" href=\"#\">Privacy policy</a>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; gap: 8px; padding: 9px 18px; border-radius: 3px; border: 1.5px solid var(--ink, #1c2933); background: transparent; color: var(--ink, #1c2933); font: 600 1rem/1.55 \"Barlow\", system-ui, sans-serif; text-decoration: none; } .ds-btn-secondary:hover { background: var(--paper-2, #f6f8f3); } .ds-btn-secondary:focus-visible { outline: 2px solid var(--water, #1d66a6); outline-offset: 3px; }"
+    },
+    {
+      "name": "Breadcrumb",
+      "kind": "nav",
+      "refersTo": null,
+      "description": "Plain text-link trail at the top of every inner page.",
+      "html": "<nav class=\"ds-crumbs\"><a href=\"#\">All projects</a><a href=\"#\">AntennaAlign</a></nav>",
+      "css": ".ds-crumbs { display: flex; flex-wrap: wrap; gap: 4px 18px; font: 400 .95rem/1.55 \"Barlow\", system-ui, sans-serif; } .ds-crumbs a { color: var(--water, #1d66a6); text-underline-offset: .18em; text-decoration-thickness: 1px; } .ds-crumbs a:hover { text-decoration-thickness: 2px; } .ds-crumbs a:focus-visible { outline: 2px solid var(--water, #1d66a6); outline-offset: 3px; }"
+    },
+    {
+      "name": "Note Card",
+      "kind": "card",
+      "refersTo": "note-card",
+      "description": "Callouts and link rows on support and privacy pages.",
+      "html": "<div class=\"ds-note\"><strong>In short:</strong> no accounts, no ads and no analytics.</div>",
+      "css": ".ds-note { background: var(--paper-2, #f6f8f3); color: var(--ink, #1c2933); border: 1px solid var(--rule, #1c293326); border-left: 3px solid var(--contour, #a87b52); border-radius: 3px; padding: 14px 18px; font: 400 17px/1.55 \"Barlow\", system-ui, sans-serif; }"
+    },
+    {
+      "name": "Project Tile",
+      "kind": "card",
+      "refersTo": "map-sheet",
+      "description": "Map-sheet tile on the home grid: ink top rule, contour preview, title, description and facts.",
+      "html": "<a class=\"ds-tile\" href=\"#\"><div class=\"ds-sheet\"><span class=\"ds-word\">esphome-sma-sunnyboy</span></div><h3>esphome-sma-sunnyboy</h3><p>Reads an SMA Sunny Boy inverter over Bluetooth and sends the data to Home Assistant.</p><dl class=\"ds-facts\"><div><dt>Type</dt><dd>Open source</dd></div><div><dt>Language</dt><dd>C++</dd></div></dl></a>",
+      "css": ".ds-tile { display: flex; flex-direction: column; max-width: 360px; color: var(--ink, #1c2933); text-decoration: none; border-top: 3px solid var(--ink, #1c2933); font: 400 17px/1.55 \"Barlow\", system-ui, sans-serif; } .ds-sheet { display: grid; place-items: center; aspect-ratio: 16 / 9; background: var(--paper-2, #f6f8f3) repeating-radial-gradient(ellipse at 40% 55%, transparent 0 14px, color-mix(in srgb, var(--contour, #a87b52) 38%, transparent) 14px 15px); border-bottom: 1px solid var(--rule, #1c293326); } .ds-word { font: 700 2rem/1 \"Barlow Condensed\", \"Arial Narrow\", sans-serif; padding: 0 20px; text-align: center; } .ds-tile h3 { margin: 16px 0 6px; font: 600 1.6rem/1.1 \"Barlow Condensed\", \"Arial Narrow\", sans-serif; } .ds-tile p { margin: 0 0 16px; color: var(--muted, #56656e); } .ds-facts { display: flex; flex-wrap: wrap; gap: 6px 28px; margin: 0; font-size: .9rem; } .ds-facts div { display: flex; gap: 6px; } .ds-facts dt { color: var(--muted, #56656e); } .ds-facts dd { margin: 0; font-weight: 600; } .ds-tile:hover h3, .ds-tile:focus-visible h3 { color: var(--water, #1d66a6); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: .15em; } .ds-tile:focus-visible { outline: 2px solid var(--water, #1d66a6); outline-offset: 3px; }"
+    },
+    {
+      "name": "Features Legend",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Feature name on the left, explanation on the right, hairline rule under each row.",
+      "html": "<ul class=\"ds-legend\"><li><h3>Check the path</h3><p>A terrain profile with line of sight and first Fresnel zone clearance.</p></li><li><h3>Saved targets</h3><p>Save a target with its antenna height and frequency.</p></li></ul>",
+      "css": ".ds-legend { list-style: none; padding: 0; margin: 0; font: 400 17px/1.55 \"Barlow\", system-ui, sans-serif; color: var(--ink, #1c2933); } .ds-legend li { display: grid; grid-template-columns: minmax(0, 12rem) minmax(0, 1fr); gap: 4px 32px; padding: 14px 0; border-bottom: 1px solid var(--rule, #1c293326); } .ds-legend h3 { margin: 0; font: 600 1.25rem/1.1 \"Barlow Condensed\", \"Arial Narrow\", sans-serif; } .ds-legend p { margin: 0; color: var(--muted, #56656e); }"
+    },
+    {
+      "name": "Terrain Profile",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Home hero drawing: ridge, land fill, two masts and the marigold line of sight that draws once.",
+      "html": "<svg class=\"ds-profile\" viewBox=\"0 0 1200 240\" role=\"img\" aria-label=\"Terrain profile with a clear line of sight\"><path class=\"land\" d=\"M0 206 C120 200 180 196 240 182 S360 150 420 128 S500 98 540 102 S620 150 680 160 S780 150 840 136 S940 150 1000 154 S1100 150 1200 146 L1200 240 L0 240 Z\"/><path class=\"ridge\" d=\"M0 206 C120 200 180 196 240 182 S360 150 420 128 S500 98 540 102 S620 150 680 160 S780 150 840 136 S940 150 1000 154 S1100 150 1200 146\"/><path class=\"mast\" d=\"M56 203 L70 110 L84 203 M60 176 H80 M63 150 H77 M66 128 H74\"/><path class=\"mast\" d=\"M1118 149 L1130 70 L1142 149 M1121 128 H1139 M1124 106 H1136\"/><path class=\"los\" d=\"M70 110 L1130 70\"/></svg>",
+      "css": ".ds-profile { display: block; width: 100%; height: auto; } .ds-profile .land { fill: var(--land, #d6e1cc); } .ds-profile .ridge { fill: none; stroke: var(--ink, #1c2933); stroke-width: 2; } .ds-profile .mast { fill: none; stroke: var(--ink, #1c2933); stroke-width: 2.5; stroke-linecap: round; } .ds-profile .los { fill: none; stroke: var(--signal, #e3a21a); stroke-width: 3.5; stroke-linecap: round; } @media (prefers-reduced-motion: no-preference) { .ds-profile .los { stroke-dasharray: 1100; stroke-dashoffset: 1100; animation: ds-sight 1.6s .3s cubic-bezier(.6, 0, .2, 1) forwards; } } @keyframes ds-sight { to { stroke-dashoffset: 0; } }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Field Notebook",
+    "overview": "**Creative North Star: \"The Field Notebook\"**\n\nThe site reads like an engineer's notebook carried up a hill: cool survey paper, drafting ink, pencilled notes and the brown contour lines of a topographic sheet. Everything is drawn rather than boxed. Rules, strokes and linework carry structure; surfaces stay flat and printed. The tools on the site are about aiming radio links over real terrain and reading hardware in the field, so the visual vocabulary comes from that work: terrain profiles, masts, contours and a single line of sight.\n\nDensity is calm and editorial. Headings are set in a condensed sans, like the labels on a survey sheet, and body text is set in the regular width of the same family, so the whole site speaks with one voice. One element on any page is allowed to be bold: on the home page it is the terrain profile with its marigold line of sight, which draws once on load. Everything else stays quiet.\n\nThe system replaced a generic card kit (rounded floating cards with soft shadows, all-caps badges, dot-joined meta strings and GitHub's white preview cards). Those patterns are the confirmed anti-reference.",
+    "keyCharacteristics": [
+      "Cool map-paper ground with drafting-ink text, light and night versions of every token.",
+      "One type family in two widths: Barlow Condensed for headings, Barlow for reading.",
+      "Structure from rules and linework, never from shadows.",
+      "Contour linework as the recurring texture, in contour umber only.",
+      "One marigold line of sight per page at most.",
+      "Sentence case everywhere; facts in definition lists, not dot-joined strings."
+    ],
+    "rules": [
+      {
+        "name": "The One Line of Sight Rule",
+        "body": "Marigold appears only on the line of sight and the things attached to it. It is never used for buttons, links, badges or highlights.",
+        "section": "colors"
+      },
+      {
+        "name": "The Linework-Only Umber Rule",
+        "body": "Contour umber draws lines and rules and never fills a surface. Umber text always uses the label shade (`contour-label-umber` / `night-contour-label`), never the linework shade.",
+        "section": "colors"
+      },
+      {
+        "name": "The Night Map Rule",
+        "body": "Every token has a night version under `prefers-color-scheme: dark`. Dark mode is the same map at night, not a different theme.",
+        "section": "colors"
+      },
+      {
+        "name": "The Sentence Case Rule",
+        "body": "No all-caps labels, no tracked-out eyebrows. A label is a short plain sentence fragment, such as \"iOS and Android app\".",
+        "section": "typography"
+      },
+      {
+        "name": "The Two Widths Rule",
+        "body": "Condensed is for headings, regular is for reading. Never set body copy in the condensed cut or headings in the regular one.",
+        "section": "typography"
+      },
+      {
+        "name": "The Printed Sheet Rule",
+        "body": "Nothing floats. If an element needs to stand apart, give it a rule or a raised-paper fill, never a shadow or a hover lift.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** frame project tiles with the 3px drafting-ink top rule and a contour-textured map-sheet preview, and centre the project's own mark on it.",
+      "**Do** give every new colour a night version under `prefers-color-scheme: dark` (The Night Map Rule).",
+      "**Do** use Barlow Condensed at 600 or 700 for headings and Barlow at 400 for reading, in sentence case.",
+      "**Do** show facts as a definition list of short label and value pairs.",
+      "**Do** keep reading lines to about 34–38em.",
+      "**Do** keep keyboard focus visible with the 2px watercourse-blue outline offset by 3px."
+    ],
+    "donts": [
+      "**Don't** use drop shadows, hover lifts or gradient washes on containers (The Printed Sheet Rule).",
+      "**Don't** use marigold for anything but the line of sight (The One Line of Sight Rule).",
+      "**Don't** use all-caps badges, tracked eyebrows or pill tags (The Sentence Case Rule).",
+      "**Don't** join metadata with middle dots or append arrows to links and buttons.",
+      "**Don't** use GitHub's generated white social-preview cards as project imagery.",
+      "**Don't** set text in the linework umber (`contour-umber` 3.24:1, `night-contour` 3.6:1): both fail AA. Use the label shade, which passes in both modes."
+    ]
+  }
+}

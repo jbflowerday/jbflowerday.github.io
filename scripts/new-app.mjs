@@ -28,16 +28,16 @@ make('support/index.html', 'support.html');
 make('privacy/index.html', 'privacy.html');
 
 const landing = resolve(root, 'index.html');
-// The tile shows the app icon at /assets/<slug>-icon.png; set --icon-bg to the icon's background colour.
+// The tile shows the app icon at /assets/<slug>-icon.png.
 const entry = `      <li><a class="tile" href="/${slug}/">
-        <div class="tile-img tile-icon" style="--icon-bg:#112a50"><img src="/assets/${slug}-icon.png" alt="" width="1024" height="1024" loading="lazy"></div>
+        <div class="sheet"><img class="app-mark" src="/assets/${slug}-icon.png" alt="" width="1024" height="1024" loading="lazy"></div>
         <div class="tile-body">
-          <span class="kind">App</span>
           <h3>${name}</h3>
           <p>${tagline}</p>
-          <div class="meta"><span>Support</span><span>Privacy</span></div>
+          <dl class="facts"><div><dt>Type</dt><dd>App</dd></div></dl>
         </div>
-      </a></li>\n`;
+      </a></li>
+`;
 const html = readFileSync(landing, 'utf8');
 writeFileSync(landing, html.replace('      <!-- APPS:END -->', `${entry}      <!-- APPS:END -->`));
 
