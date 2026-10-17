@@ -1,0 +1,5 @@
+title: Apps by Jack Flowerday
+exclude:
+  - scripts
+  - README.md
+  - _template

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AntennaAlign Privacy Policy</title>
+<meta name="description" content="Privacy policy for the AntennaAlign mobile app.">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<main>
+  <nav><a href="/">All apps</a><a href="/antennaalign/">AntennaAlign</a></nav>
+  <header>
+    <h1>AntennaAlign Privacy Policy</h1>
+    <p class="muted">Effective 17 October 2026</p>
+  </header>
+
+  <div class="card">
+    <p><strong>In short:</strong> AntennaAlign has no accounts, no ads and no analytics. Your location, camera view and
+    saved targets stay on your phone. The app contacts a few public map and elevation services to draw maps and terrain,
+    and those requests include coordinates and your IP address, as described below. The developer does not receive or
+    store any of your data.</p>
+  </div>
+
+  <h2>Who we are</h2>
+  <p>AntennaAlign is a mobile app that helps you aim an antenna at a target by showing the bearing, distance and tilt to it,
+  the terrain profile between the two points, and an augmented-reality view through your camera. It is developed by
+  Jack Flowerday (&ldquo;the developer&rdquo;).</p>
+
+  <h2>What the app uses on your device</h2>
+  <table>
+    <tr><th>Item</th><th>Why</th><th>Where it goes</th></tr>
+    <tr><td>Location (GPS)</td><td>To work out the bearing, distance and tilt from where you are to the target, and to centre the map.</td><td>Used on your device. Coordinates are also sent to the elevation and map services listed below.</td></tr>
+    <tr><td>Camera</td><td>To show the augmented-reality alignment view and take screenshots of it.</td><td>The live image is processed on your device and is never uploaded.</td></tr>
+    <tr><td>Motion sensors and compass</td><td>To measure which way the phone is pointing.</td><td>Used on your device only.</td></tr>
+    <tr><td>Photo library (write access)</td><td>To save an alignment screenshot to your photos when you tap the screenshot button.</td><td>Saved on your device only. The app does not read your existing photos.</td></tr>
+    <tr><td>Saved targets and settings</td><td>To remember the targets you save and your preferences (antenna heights, frequency, appearance, calibration).</td><td>Stored locally on your device. Deleting the app deletes them.</td></tr>
+  </table>
+  <p>All of these permissions are optional. If you decline location access you can place your position on the map by hand.</p>
+
+  <h2>Information sent to third-party services</h2>
+  <p>To draw maps and terrain, the app requests data from the services below. Each request is made directly from your phone
+  to that service, so the service sees your IP address and the information in the request. The developer is not involved
+  and does not receive a copy.</p>
+  <table>
+    <tr><th>Service</th><th>Used for</th><th>What it can see</th></tr>
+    <tr><td><a href="https://open-meteo.com/en/privacy">Open-Meteo</a> (elevation API)</td><td>Ground elevation along the path between you and the target.</td><td>Coordinates of points between your position and the target, and your IP address.</td></tr>
+    <tr><td><a href="https://aws.amazon.com/privacy/">Amazon Web Services</a> (open Terrarium terrain tiles)</td><td>Terrain data for the camera view's skyline.</td><td>The map tiles requested, which cover the area around you, and your IP address.</td></tr>
+    <tr><td><a href="https://opentopomap.org/about">OpenTopoMap</a> / <a href="https://osmfoundation.org/wiki/Privacy_Policy">OpenStreetMap</a></td><td>Topographic map tiles.</td><td>The map area you view and your IP address.</td></tr>
+    <tr><td><a href="https://www.esri.com/en-us/privacy/overview">Esri</a></td><td>Satellite imagery and street map tiles.</td><td>The map area you view and your IP address.</td></tr>
+    <tr><td><a href="https://www.cloudflare.com/privacypolicy/">unpkg</a></td><td>Delivers the Leaflet map library used to display the map.</td><td>Your IP address.</td></tr>
+  </table>
+  <p>These services have their own privacy policies, linked above, which govern how they handle that information.</p>
+
+  <h2>What we do not do</h2>
+  <ul>
+    <li>We do not collect your name, email address or any account information. There are no accounts.</li>
+    <li>We do not use analytics, advertising or tracking tools, and we do not track you across other apps or websites.</li>
+    <li>We do not sell or share your personal information.</li>
+    <li>We do not upload your camera images, photos or saved targets.</li>
+  </ul>
+
+  <h2>Data retention and your choices</h2>
+  <p>Your saved targets and settings stay on your phone until you delete them. You can remove a saved target from the Saved
+  tab, or delete everything by uninstalling the app. You can turn off location, camera, motion and photo access at any
+  time in your phone's Settings; some features will stop working without them.</p>
+
+  <h2>Children</h2>
+  <p>AntennaAlign is not directed at children under 13 and does not knowingly collect personal information from anyone.</p>
+
+  <h2>Security</h2>
+  <p>Because the app keeps your data on your own device and does not run its own servers, there is no developer-side
+  database that could be breached. Requests to the third-party services above are made over encrypted (HTTPS) connections.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>If the app's data practices change, this page will be updated and the effective date above will change.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about this policy? Open an issue at
+  <a href="https://github.com/jbflowerday/jbflowerday.github.io/issues">github.com/jbflowerday/jbflowerday.github.io/issues</a>.</p>
+</main>
+</body>
+</html>
