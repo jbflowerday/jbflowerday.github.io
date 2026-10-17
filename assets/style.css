@@ -78,8 +78,8 @@ footer { margin-top: 40px; color: var(--muted); font-size: .85rem; }
 .features h3 { margin: 0 0 4px; font-size: 1rem; }
 .features p { margin: 0; color: var(--muted); font-size: .93rem; }
 .shots { display: flex; gap: 16px; overflow-x: auto; padding: 4px 2px 14px; scroll-snap-type: x mandatory; }
-.shots figure { margin: 0; flex: none; width: 210px; scroll-snap-align: start; }
-.shots img { display: block; width: 100%; height: auto; border-radius: 18px; border: 1px solid var(--border); }
+.shots figure { margin: 0; flex: none; width: 240px; scroll-snap-align: start; }
+.shots img { display: block; width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border); }
 .shots figcaption { margin-top: 8px; font-size: .85rem; color: var(--muted); text-align: center; }
 .overview pre { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; overflow-x: auto; font-size: .88rem; }
 .overview code { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: .9em; }
