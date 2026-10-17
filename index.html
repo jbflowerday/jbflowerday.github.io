@@ -5,59 +5,44 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Jack Flowerday</title>
 <meta name="description" content="Projects and apps by Jack Flowerday.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&family=Barlow+Condensed:wght@600;700&display=swap">
 <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body class="home">
 <main>
   <header class="hero">
-    <h1>Jack Flowerday</h1>
-    <p class="lede">I make tools for aiming radio links, reading solar inverters and running a smarter home.</p>
-    <p class="links"><a href="https://github.com/jbflowerday">GitHub</a></p>
+    <img class="avatar" src="https://avatars.githubusercontent.com/u/194327739?v=4&amp;s=192" alt="" width="96" height="96">
+    <div>
+      <h1>Jack Flowerday</h1>
+      <p class="lede">I build mobile apps and home automation hardware.</p>
+      <p class="links">
+        <a class="pill" href="https://github.com/jbflowerday">GitHub</a>
+      </p>
+    </div>
   </header>
-  <svg class="profile" viewBox="0 0 1200 240" role="img" aria-label="A terrain profile with a clear line of sight between two masts">
-    <path class="land" d="M0 206 C120 200 180 196 240 182 S360 150 420 128 S500 98 540 102 S620 150 680 160 S780 150 840 136 S940 150 1000 154 S1100 150 1200 146 L1200 240 L0 240 Z"/>
-    <path class="contour" d="M0 206 C120 200 180 196 240 182 S360 150 420 128 S500 98 540 102 S620 150 680 160 S780 150 840 136 S940 150 1000 154 S1100 150 1200 146" transform="translate(0 18)"/>
-    <path class="contour" d="M0 206 C120 200 180 196 240 182 S360 150 420 128 S500 98 540 102 S620 150 680 160 S780 150 840 136 S940 150 1000 154 S1100 150 1200 146" transform="translate(0 36)"/>
-    <path class="contour" d="M0 206 C120 200 180 196 240 182 S360 150 420 128 S500 98 540 102 S620 150 680 160 S780 150 840 136 S940 150 1000 154 S1100 150 1200 146" transform="translate(0 54)"/>
-    <path class="ridge" d="M0 206 C120 200 180 196 240 182 S360 150 420 128 S500 98 540 102 S620 150 680 160 S780 150 840 136 S940 150 1000 154 S1100 150 1200 146"/>
-    <path class="mast" d="M56 203 L70 110 L84 203 M60 176 H80 M63 150 H77 M66 128 H74 M70 110 L58 100"/>
-    <path class="mast" d="M1118 149 L1130 70 L1142 149 M1121 128 H1139 M1124 106 H1136 M1127 86 H1133 M1130 70 L1142 61"/>
-    <ellipse class="fresnel" cx="600" cy="90" rx="530" ry="15" transform="rotate(-2.16 600 90)"/>
-    <path class="los" d="M70 110 L1130 70"/>
-    <circle class="end" cx="70" cy="110" r="5"/>
-    <circle class="end end-far" cx="1130" cy="70" r="5"/>
-  </svg>
 
   <section>
     <h2>Projects</h2>
-    <p class="section-note">Apps I publish and the public code behind my other work.</p>
+    <p class="muted">Apps and public repositories on GitHub.</p>
     <!-- Apps and repos are listed here statically; repo stats are refreshed and new public repos appended from the GitHub API on load. -->
     <ul class="grid" id="repos">
       <!-- APPS:START (new-app.mjs adds entries here) -->
       <li><a class="tile" href="/antennaalign/">
-        <div class="sheet"><img class="app-mark" src="/assets/antennaalign-icon.png" alt="" width="1024" height="1024" loading="lazy"></div>
+        <div class="tile-img tile-icon" style="--icon-bg:#112a50"><img src="/assets/antennaalign-icon.png" alt="" width="1024" height="1024" loading="lazy"></div>
         <div class="tile-body">
+          <span class="kind">App</span>
           <h3>AntennaAlign</h3>
-          <p>Aim directional antennas with augmented reality, maps and terrain profiles.</p>
-          <dl class="facts"><div><dt>Type</dt><dd>iOS and Android app</dd></div></dl>
+          <p>Aim antennas with augmented reality, maps and terrain profiles.</p>
+          <div class="meta"><span>Support</span><span>Privacy</span></div>
         </div>
       </a></li>
       <!-- APPS:END -->
       <li><a class="tile" href="/esphome-sma-sunnyboy/" data-repo="esphome-sma-sunnyboy">
-        <div class="sheet"><svg class="mark" viewBox="0 0 120 90" aria-hidden="true">
-          <circle cx="92" cy="20" r="11" fill="var(--signal)"/>
-          <path d="M92 2v5M92 33v5M74 20h5M105 20h5M79 7l3.5 3.5M101.5 29.5L105 33M79 33l3.5-3.5M101.5 10.5L105 7" stroke="var(--signal)" stroke-width="3" stroke-linecap="round"/>
-          <path d="M14 46h62l-10 30H4z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
-          <path d="M34.7 46L28 76M55.3 46L48 76M9 61h62" stroke="currentColor" stroke-width="2"/>
-          <path d="M100 52l10 9-10 9V44l10 9-10 9" fill="none" stroke="var(--water)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
-        </svg></div>
+        <img class="tile-img" src="https://opengraph.githubassets.com/1/jbflowerday/esphome-sma-sunnyboy" alt="" width="1200" height="600" loading="lazy">
         <div class="tile-body">
+          <span class="kind">Open source</span>
           <h3>esphome-sma-sunnyboy</h3>
-          <p>Reads an SMA Sunny Boy inverter over Bluetooth with an ESP32 and sends the data to Home Assistant. No SMA cloud or Raspberry Pi needed.</p>
-          <dl class="facts"><div><dt>Type</dt><dd>Open source</dd></div><div><dt>Language</dt><dd>C++</dd></div></dl>
+          <p>ESPHome component that reads an SMA Sunny Boy inverter over Bluetooth on an ESP32 and sends the data to Home Assistant. No SMA cloud or Raspberry Pi needed.</p>
+          <div class="meta"><span class="lang"><i style="background:#f34b7d"></i>C++</span></div>
         </div>
       </a></li>
     </ul>
@@ -69,14 +54,16 @@
 (() => {
   const USER = 'jbflowerday';
   const SKIP = new Set([`${USER}.github.io`]);
+  const COLORS = { 'C++': '#f34b7d', C: '#555555', Swift: '#F05138', Kotlin: '#A97BFF', Dart: '#00B4AB', TypeScript: '#3178c6',
+    JavaScript: '#f1e05a', Python: '#3572A5', HTML: '#e34c26', CSS: '#663399', Go: '#00ADD8', Rust: '#dea584', Java: '#b07219', Shell: '#89e051' };
   const list = document.getElementById('repos');
   const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
-  const fact = (dt, dd) => `<div><dt>${dt}</dt><dd>${esc(dd)}</dd></div>`;
-  const facts = (r) => [
-    fact('Type', 'Open source'),
-    r.language && fact('Language', r.language),
-    r.stargazers_count && fact('Stars', r.stargazers_count),
-    fact('Updated', new Date(r.pushed_at).toLocaleDateString(undefined, { month: 'short', year: 'numeric' })),
+  const updated = (iso) => 'Updated ' + new Date(iso).toLocaleDateString(undefined, { month: 'short', year: 'numeric' });
+
+  const meta = (r) => [
+    r.language && `<span class="lang"><i style="background:${COLORS[r.language] || 'var(--muted)'}"></i>${esc(r.language)}</span>`,
+    r.stargazers_count && `<span>★ ${r.stargazers_count}</span>`,
+    `<span>${updated(r.pushed_at)}</span>`,
   ].filter(Boolean).join('');
 
   fetch(`https://api.github.com/users/${USER}/repos?per_page=100&type=owner&sort=pushed`)
@@ -87,13 +74,13 @@
         const existing = list.querySelector(`[data-repo="${CSS.escape(r.name)}"]`);
         if (existing) {
           // Keep the hand-written description, refresh the live stats.
-          existing.querySelector('.facts').innerHTML = facts(r);
+          existing.querySelector('.meta').innerHTML = meta(r);
           continue;
         }
         const li = document.createElement('li');
         li.innerHTML = `<a class="tile" href="/project/?repo=${encodeURIComponent(r.name)}" data-repo="${esc(r.name)}">
-          <div class="sheet"><span class="word">${esc(r.name)}</span></div>
-          <div class="tile-body"><h3>${esc(r.name)}</h3><p>${esc(r.description || 'No description yet.')}</p><dl class="facts">${facts(r)}</dl></div></a>`;
+          <img class="tile-img" src="https://opengraph.githubassets.com/1/${USER}/${encodeURIComponent(r.name)}" alt="" width="1200" height="600" loading="lazy">
+          <div class="tile-body"><span class="kind">Open source</span><h3>${esc(r.name)}</h3><p>${esc(r.description || 'No description yet.')}</p><div class="meta">${meta(r)}</div></div></a>`;
         list.append(li);
       }
     })
