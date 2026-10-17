@@ -4,20 +4,44 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{APP_NAME}}</title>
-<meta name="description" content="{{APP_NAME}}: support and privacy information.">
+<meta name="description" content="{{APP_NAME}}: {{TAGLINE}}">
 <link rel="stylesheet" href="/assets/style.css">
 </head>
-<body>
+<body class="overview">
 <main>
-  <nav><a href="/">All apps</a></nav>
-  <header>
-    <h1>{{APP_NAME}}</h1>
-    <p class="muted">{{TAGLINE}}</p>
+  <nav><a href="/">All projects</a></nav>
+  <header class="project-hero">
+    <img class="app-icon" src="/assets/{{SLUG}}-icon.png" alt="{{APP_NAME}} app icon" width="1024" height="1024">
+    <div>
+      <span class="kind">App</span>
+      <h1>{{APP_NAME}}</h1>
+      <p class="lede">{{TAGLINE}}</p>
+    </div>
   </header>
-  <ul class="list">
-    <li><a class="card" href="/{{SLUG}}/support/"><strong>Support</strong><br><span class="muted">Help, FAQ and how to contact the developer.</span></a></li>
-    <li><a class="card" href="/{{SLUG}}/privacy/"><strong>Privacy policy</strong><br><span class="muted">What the app does with your data.</span></a></li>
-  </ul>
+  <div class="actions">
+    <a class="btn primary" href="/{{SLUG}}/support/">Support</a>
+    <a class="btn" href="/{{SLUG}}/privacy/">Privacy policy</a>
+    <!-- TODO: if the source is public, add: <a class="btn" href="https://github.com/jbflowerday/REPO">View on GitHub</a> -->
+  </div>
+
+  <section>
+    <h2>Features</h2>
+    <ul class="features">
+      <!-- TODO: one <li> per feature. -->
+      <li><h3>TODO feature</h3><p>TODO one or two sentences.</p></li>
+    </ul>
+  </section>
+
+  <!-- Optional: screenshots in /{{SLUG}}/img/, shown like antennaalign/index.html.
+  <section>
+    <h2>Screenshots</h2>
+    <div class="shots">
+      <figure><img src="/{{SLUG}}/img/01.jpg" alt="TODO" loading="lazy"><figcaption>TODO</figcaption></figure>
+    </div>
+  </section>
+  -->
+
+  <footer>Questions? Open an issue at <a href="https://github.com/jbflowerday/jbflowerday.github.io/issues">github.com/jbflowerday/jbflowerday.github.io/issues</a>.</footer>
 </main>
 </body>
 </html>

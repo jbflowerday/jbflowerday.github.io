@@ -1,6 +1,7 @@
 # jbflowerday.github.io
 
-Support and privacy pages for my apps, hosted with GitHub Pages at https://jbflowerday.github.io.
+Personal portfolio (a tile grid of my apps and public GitHub repos) plus support and privacy pages for my apps, hosted with GitHub Pages at https://jbflowerday.github.io.
+Public repos are added to the home page automatically from the GitHub API; forks, archived repos and this repo are skipped.
 One folder per app, so the same repo can be reused as the **Support URL** and **Privacy Policy URL** for App Store Connect and Google Play.
 
 | App | Support URL | Privacy policy URL |
@@ -13,8 +14,8 @@ One folder per app, so the same repo can be reused as the **Support URL** and **
 node scripts/new-app.mjs my-app "My App" "One-line description"
 ```
 
-This creates `/my-app/` (app page, support page, privacy policy) from `_template/` and adds the app to the landing page.
-Then **fill in every `TODO`** in `my-app/privacy/index.html` and `my-app/support/index.html` with what the app really does
+This creates `/my-app/` (app page, support page, privacy policy) from `_template/` and adds an app tile to the home page. Put the app icon at `assets/my-app-icon.png` for the tile.
+Then **fill in every `TODO`** in `my-app/index.html` (features), `my-app/privacy/index.html` and `my-app/support/index.html` with what the app really does
 (permissions, third-party services, data sent off the device). Check it against the app's code before submitting. Commit and push to `main`; Pages
 republishes within a minute or two.
 

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>esphome-sma-sunnyboy</title>
+<meta name="description" content="ESPHome component that reads an SMA Sunny Boy inverter over Bluetooth and sends the data to Home Assistant.">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body class="overview">
+<main>
+  <nav><a href="/">All projects</a></nav>
+  <header>
+    <span class="kind">Open source</span>
+    <h1>esphome-sma-sunnyboy</h1>
+    <p class="lede">Read an SMA Sunny Boy solar inverter over Bluetooth with an ESP32 and send the data straight to Home Assistant.</p>
+  </header>
+  <img class="banner" src="https://opengraph.githubassets.com/1/jbflowerday/esphome-sma-sunnyboy" alt="" width="1200" height="600">
+  <div class="actions">
+    <a class="btn primary" href="https://github.com/jbflowerday/esphome-sma-sunnyboy">
+      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+      View on GitHub
+    </a>
+  </div>
+
+  <section>
+    <h2>Features</h2>
+    <ul class="features">
+      <li><h3>No cloud, no Raspberry Pi</h3><p>An ESP32 within Bluetooth range of the inverter replaces SMA's cloud, Sunny Explorer and SBFspot.</p></li>
+      <li><h3>Native Home Assistant device</h3><p>Data goes over the ESPHome API, and Home Assistant discovers the device automatically.</p></li>
+      <li><h3>Energy dashboard ready</h3><p>The lifetime energy sensor plugs straight into the Home Assistant Energy dashboard.</p></li>
+      <li><h3>Live AC and DC readings</h3><p>AC power, voltage, current and grid frequency, plus power, voltage and current for each DC string.</p></li>
+      <li><h3>Inverter status</h3><p>Device status, grid relay, serial number, software version, temperature, operating time and Bluetooth signal.</p></li>
+      <li><h3>Handles the night</h3><p>When the inverter turns off at dusk, values go unavailable (or 0 if you prefer) and the ESP32 reconnects when it wakes up.</p></li>
+      <li><h3>Pure ESP-IDF Bluetooth</h3><p>Talks SMANET2+ over Bluetooth Classic SPP using the Bluedroid API directly, with no Arduino BluetoothSerial dependency.</p></li>
+      <li><h3>Pick only what you need</h3><p>Every sensor is optional. Add just the keys you want to your ESPHome YAML.</p></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Quick start</h2>
+    <p>You need an original ESP32 (ESP32-WROOM or WROVER). S2, S3, C3, C6 and H2 chips have no Bluetooth Classic and won't work.</p>
+<pre><code>external_components:
+  - source: github://jbflowerday/esphome-sma-sunnyboy
+    components: [sma_bluetooth]
+
+sma_bluetooth:
+  mac_address: "00:80:25:xx:xx:xx"
+  password: "0000"
+  update_interval: 30s</code></pre>
+    <p class="note">The full sensor list and setup steps are in the <a href="https://github.com/jbflowerday/esphome-sma-sunnyboy#readme">README</a>.</p>
+  </section>
+
+  <footer>Built on the SMA protocol work of the <a href="https://github.com/SBFspot/SBFspot">SBFspot</a> project.</footer>
+</main>
+</body>
+</html>

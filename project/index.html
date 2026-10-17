@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project</title>
+<meta name="description" content="Project overview by Jack Flowerday.">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body class="overview">
+<!-- Generic overview for public repos that don't have a hand-written page yet: /project/?repo=<name>.
+     Shows the repo's details and its README, rendered by GitHub. -->
+<main>
+  <nav><a href="/">All projects</a></nav>
+  <header>
+    <span class="kind">Open source</span>
+    <h1 id="name">Loading…</h1>
+    <p class="lede" id="desc"></p>
+  </header>
+  <img class="banner" id="banner" alt="" width="1200" height="600" hidden>
+  <div class="actions" id="actions" hidden>
+    <a class="btn primary" id="repo-link" href="https://github.com/jbflowerday">
+      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+      View on GitHub
+    </a>
+    <a class="btn" id="homepage" hidden>Website</a>
+  </div>
+  <p class="note meta" id="meta"></p>
+  <section class="readme" id="readme"></section>
+</main>
+<script>
+(() => {
+  const USER = 'jbflowerday';
+  const name = new URLSearchParams(location.search).get('repo') || '';
+  const $ = (id) => document.getElementById(id);
+  const fail = (msg) => { $('name').textContent = 'Project not found'; $('desc').textContent = msg; document.title = 'Project not found'; };
+  if (!/^[\w.-]+$/.test(name)) return fail('No project was given.');
+
+  fetch(`https://api.github.com/repos/${USER}/${name}`)
+    .then((res) => (res.ok ? res.json() : Promise.reject(res.status)))
+    .then((r) => {
+      if (r.private) return fail('This project is not public.');
+      document.title = r.name;
+      $('name').textContent = r.name;
+      $('desc').textContent = r.description || '';
+      $('banner').src = `https://opengraph.githubassets.com/1/${USER}/${encodeURIComponent(r.name)}`;
+      $('banner').hidden = false;
+      $('repo-link').href = r.html_url;
+      if (r.homepage) { $('homepage').href = r.homepage; $('homepage').hidden = false; }
+      $('actions').hidden = false;
+      $('meta').textContent = [r.language, r.stargazers_count ? `★ ${r.stargazers_count}` : '', r.license && r.license.spdx_id !== 'NOASSERTION' ? r.license.spdx_id : '',
+        'Updated ' + new Date(r.pushed_at).toLocaleDateString(undefined, { month: 'short', year: 'numeric' })].filter(Boolean).join(' · ');
+      // GitHub renders and sanitises the README HTML.
+      return fetch(`https://api.github.com/repos/${USER}/${name}/readme`, { headers: { Accept: 'application/vnd.github.html' } })
+        .then((res) => (res.ok ? res.text() : ''))
+        .then((html) => {
+          if (!html) return;
+          const readme = $('readme');
+          readme.innerHTML = html;
+          // Make relative links and images in the README point at the repo.
+          const base = `https://github.com/${USER}/${name}/`;
+          readme.querySelectorAll('a[href]').forEach((a) => { const h = a.getAttribute('href'); if (!/^([a-z]+:|#)/i.test(h)) a.href = new URL(h, base + 'blob/HEAD/').href; });
+          readme.querySelectorAll('img[src]').forEach((img) => { const s = img.getAttribute('src'); if (!/^[a-z]+:/i.test(s)) img.src = new URL(s, base + 'raw/HEAD/').href; });
+        });
+    })
+    .catch(() => fail('GitHub could not be reached. Try again in a minute.'));
+})();
+</script>
+</body>
+</html>

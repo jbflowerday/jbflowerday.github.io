@@ -28,10 +28,19 @@ make('support/index.html', 'support.html');
 make('privacy/index.html', 'privacy.html');
 
 const landing = resolve(root, 'index.html');
-const entry = `    <li><a class="card" href="/${slug}/"><strong>${name}</strong><br><span class="muted">${tagline}</span></a></li>\n`;
+// The tile shows the app icon at /assets/<slug>-icon.png; set --icon-bg to the icon's background colour.
+const entry = `      <li><a class="tile" href="/${slug}/">
+        <div class="tile-img tile-icon" style="--icon-bg:#112a50"><img src="/assets/${slug}-icon.png" alt="" width="1024" height="1024" loading="lazy"></div>
+        <div class="tile-body">
+          <span class="kind">App</span>
+          <h3>${name}</h3>
+          <p>${tagline}</p>
+          <div class="meta"><span>Support</span><span>Privacy</span></div>
+        </div>
+      </a></li>\n`;
 const html = readFileSync(landing, 'utf8');
-writeFileSync(landing, html.replace('    <!-- APPS:END -->', `${entry}    <!-- APPS:END -->`));
+writeFileSync(landing, html.replace('      <!-- APPS:END -->', `${entry}      <!-- APPS:END -->`));
 
-console.log(`Created /${slug}/. Next: fill in the TODOs in ${slug}/privacy/index.html and ${slug}/support/index.html.`);
+console.log(`Created /${slug}/. Next: fill in the TODOs in ${slug}/index.html, ${slug}/privacy/index.html and ${slug}/support/index.html.`);
 console.log(`Support URL:  https://jbflowerday.github.io/${slug}/support/`);
 console.log(`Privacy URL:  https://jbflowerday.github.io/${slug}/privacy/`);

@@ -1,10 +1,12 @@
 :root {
+  color-scheme: light dark;
   --bg: #eef2f7; --card: #ffffff; --border: #d3dce8; --text: #122033; --muted: #5b6e86; --accent: #2563d9;
 }
 @media (prefers-color-scheme: dark) {
   :root { --bg: #0e1621; --card: #172331; --border: #27384c; --text: #e6edf5; --muted: #8b9db3; --accent: #5aa2ff; }
 }
 * { box-sizing: border-box; }
+[hidden] { display: none !important; }
 body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
 main { max-width: 720px; margin: 0 auto; padding: 32px 20px 64px; }
 nav { font-size: .92rem; margin-bottom: 20px; color: var(--muted); }
@@ -23,3 +25,71 @@ table { width: 100%; border-collapse: collapse; font-size: .95rem; }
 th, td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--border); }
 th { color: var(--muted); font-weight: 600; }
 footer { margin-top: 40px; color: var(--muted); font-size: .85rem; }
+
+/* Home page: portfolio grid */
+.home main { max-width: 1080px; padding-top: 56px; }
+.hero { display: flex; align-items: center; gap: 22px; margin-bottom: 40px; }
+.avatar { width: 96px; height: 96px; border-radius: 50%; border: 1px solid var(--border); flex: none; }
+.hero h1 { font-size: 2.3rem; letter-spacing: -.02em; }
+.lede { margin: 0; font-size: 1.1rem; color: var(--muted); }
+.links { margin: 12px 0 0; display: flex; gap: 8px; flex-wrap: wrap; }
+.pill { display: inline-block; padding: 4px 14px; border: 1px solid var(--border); border-radius: 999px; background: var(--card); text-decoration: none; font-size: .9rem; font-weight: 600; }
+.pill:hover { border-color: var(--accent); }
+.home section { margin-top: 40px; }
+.home h2 { font-size: 1.35rem; margin: 0 0 2px; }
+.grid { list-style: none; padding: 0; margin: 16px 0 0; display: grid; gap: 20px; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+.tile { display: flex; flex-direction: column; height: 100%; background: var(--card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; text-decoration: none; color: inherit; transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease; }
+.tile:hover, .tile:focus-visible { transform: translateY(-3px); border-color: var(--accent); box-shadow: 0 10px 28px rgb(0 0 0 / .12); }
+.tile-img { display: block; width: 100%; height: auto; aspect-ratio: 2 / 1; object-fit: cover; background: var(--border); border-bottom: 1px solid var(--border); }
+.tile-icon { display: grid; place-items: center; background: radial-gradient(circle at 50% 40%, color-mix(in srgb, var(--icon-bg) 75%, #fff), var(--icon-bg)); }
+.tile-icon img { width: 34%; height: auto; border-radius: 22.5%; box-shadow: 0 8px 24px rgb(0 0 0 / .35); }
+.tile-body { display: flex; flex-direction: column; flex: 1; padding: 16px 18px 18px; }
+.kind { align-self: flex-start; margin-bottom: 8px; padding: 1px 9px; border-radius: 999px; font-size: .72rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--accent); background: color-mix(in srgb, var(--accent) 14%, transparent); }
+.tile h3 { margin: 0 0 6px; font-size: 1.08rem; color: var(--text); word-break: break-word; }
+.tile p { margin: 0 0 14px; color: var(--muted); font-size: .93rem; flex: 1; }
+.meta { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: .82rem; color: var(--muted); }
+.lang i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; vertical-align: -1px; }
+@media (max-width: 560px) {
+  .home main { padding: 32px 16px 48px; }
+  .hero { flex-direction: column; align-items: flex-start; gap: 14px; }
+  .hero h1 { font-size: 1.9rem; }
+}
+@media (prefers-reduced-motion: reduce) { .tile { transition: none; } .tile:hover { transform: none; } }
+
+/* Project overview pages */
+.overview main { max-width: 960px; }
+.overview nav { margin-bottom: 28px; }
+.project-hero { display: flex; align-items: center; gap: 24px; margin-bottom: 8px; }
+.project-hero .app-icon { width: 112px; height: 112px; border-radius: 22.5%; flex: none; box-shadow: 0 8px 24px rgb(0 0 0 / .25); }
+.project-hero h1 { font-size: 2.2rem; letter-spacing: -.02em; }
+.project-hero .lede { margin-top: 4px; }
+.banner { display: block; width: 100%; max-width: 640px; height: auto; aspect-ratio: 2 / 1; object-fit: cover; border: 1px solid var(--border); border-radius: 14px; margin: 8px 0 4px; }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0 8px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 9px 18px; border-radius: 10px; border: 1px solid var(--border); background: var(--card); color: var(--text); text-decoration: none; font-weight: 600; font-size: .95rem; }
+.btn:hover { border-color: var(--accent); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.btn.primary:hover { filter: brightness(1.08); }
+.btn svg { width: 18px; height: 18px; fill: currentColor; }
+.note { color: var(--muted); font-size: .88rem; margin: 0; }
+.overview section { margin-top: 44px; }
+.overview h2 { font-size: 1.35rem; margin: 0 0 14px; }
+.features { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.features li { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 16px 18px; }
+.features h3 { margin: 0 0 4px; font-size: 1rem; }
+.features p { margin: 0; color: var(--muted); font-size: .93rem; }
+.shots { display: flex; gap: 16px; overflow-x: auto; padding: 4px 2px 14px; scroll-snap-type: x mandatory; }
+.shots figure { margin: 0; flex: none; width: 210px; scroll-snap-align: start; }
+.shots img { display: block; width: 100%; height: auto; border-radius: 18px; border: 1px solid var(--border); }
+.shots figcaption { margin-top: 8px; font-size: .85rem; color: var(--muted); text-align: center; }
+.overview pre { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; overflow-x: auto; font-size: .88rem; }
+.overview code { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: .9em; }
+.readme img { max-width: 100%; }
+.readme h1 { font-size: 1.5rem; }
+.readme table { display: block; overflow-x: auto; }
+@media (max-width: 560px) {
+  .overview main { padding: 28px 16px 48px; }
+  .project-hero { flex-direction: column; align-items: flex-start; gap: 14px; }
+  .project-hero .app-icon { width: 88px; height: 88px; }
+  .project-hero h1 { font-size: 1.8rem; }
+  .shots figure { width: 170px; }
+}
