@@ -1,0 +1,86 @@
+# Rebuilds the AntennaAlign cell site tiles (data/cells/v1/) from ACMA, ISED, FCC and OpenCelliD, monthly.
+# The builder is scripts/build-cell-sites.py in jbflowerday/antennaalign-app.
+# Secrets: OPENCELLID_TOKEN (OpenCelliD API token), ANTENNAALIGN_APP_TOKEN (read access to the private app repo).
+# data/au-cell-sites.json is left alone: older app versions still read it.
+name: Cell site tiles
+
+on:
+  schedule:
+    - cron: '17 3 2 * *' # 03:17 UTC on the 2nd of each month
+  workflow_dispatch:
+    inputs:
+      skip_gate:
+        description: Publish even if site counts dropped more than 20%
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cell-sites
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Check secrets
+        env:
+          OPENCELLID_TOKEN: ${{ secrets.OPENCELLID_TOKEN }}
+          APP_TOKEN: ${{ secrets.ANTENNAALIGN_APP_TOKEN }}
+        run: |
+          missing=0
+          if [ -z "$OPENCELLID_TOKEN" ]; then echo "::error::Repository secret OPENCELLID_TOKEN is not set (Settings > Secrets and variables > Actions)."; missing=1; fi
+          if [ -z "$APP_TOKEN" ]; then echo "::error::Repository secret ANTENNAALIGN_APP_TOKEN is not set (Settings > Secrets and variables > Actions)."; missing=1; fi
+          exit $missing
+
+      - uses: actions/checkout@v4
+
+      - name: Check out builder
+        uses: actions/checkout@v4
+        with:
+          repository: jbflowerday/antennaalign-app
+          token: ${{ secrets.ANTENNAALIGN_APP_TOKEN }}
+          path: app
+          sparse-checkout: scripts/build-cell-sites.py
+          sparse-checkout-cone-mode: false
+          persist-credentials: false
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Build tiles
+        env:
+          OPENCELLID_TOKEN: ${{ secrets.OPENCELLID_TOKEN }}
+        run: python -I app/scripts/build-cell-sites.py --download "$RUNNER_TEMP/sources" --out "$RUNNER_TEMP/cells"
+
+      - name: Compare site counts with published data
+        if: ${{ !inputs.skip_gate }}
+        run: python -I .github/scripts/check-cell-counts.py data/cells/v1 "$RUNNER_TEMP/cells"
+
+      - name: Replace data/cells/v1
+        run: |
+          rm -rf data/cells/v1
+          cp -R "$RUNNER_TEMP/cells" data/cells/v1
+
+      - name: Commit and push if changed
+        run: |
+          git add -A data/cells/v1
+          if git diff --cached --quiet -- . ':(exclude)data/cells/v1/index.json'; then
+            # Only index.json can differ: ignore a change to its build date alone.
+            if python -I -c 'import json, subprocess, sys
+          old = json.loads(subprocess.run(["git", "show", "HEAD:data/cells/v1/index.json"], capture_output=True, text=True).stdout or "{}")
+          new = json.load(open("data/cells/v1/index.json"))
+          old.pop("generated", None); new.pop("generated", None)
+          sys.exit(0 if old == new else 1)'; then
+              echo "No change in the tiles: nothing to publish."
+              exit 0
+            fi
+          fi
+          git config user.name Jack
+          git config user.email jbflowerday@users.noreply.github.com
+          git commit -m "Update AntennaAlign cell site tiles ($(date -u +%Y-%m-%d))"
+          git push
