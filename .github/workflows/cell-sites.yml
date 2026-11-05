@@ -1,4 +1,6 @@
-# Rebuilds the AntennaAlign cell site tiles (data/cells/v1/) from ACMA, ISED, FCC and OpenCelliD, monthly.
+# Rebuilds the AntennaAlign cell site tiles (data/cells/v1/) from ACMA, ISED, FCC and OpenCelliD, on demand.
+# The monthly build runs in Docker on Jack's server (antennaalign-app docker/cell-sites, deployed with Arcane),
+# where FCC and OpenCelliD downloads work. This workflow is a manual fallback.
 # The builder is scripts/build-cell-sites.py in jbflowerday/antennaalign-app.
 # Secrets: OPENCELLID_TOKEN (OpenCelliD API token), ANTENNAALIGN_APP_TOKEN (read access to the private app repo).
 # FCC sites are carried over from the published tiles if data.fcc.gov refuses the runner (it returns 403).
@@ -6,8 +8,6 @@
 name: Cell site tiles
 
 on:
-  schedule:
-    - cron: '17 3 2 * *' # 03:17 UTC on the 2nd of each month
   workflow_dispatch:
     inputs:
       skip_gate:
