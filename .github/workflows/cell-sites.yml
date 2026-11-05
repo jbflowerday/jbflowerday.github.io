@@ -1,6 +1,7 @@
 # Rebuilds the AntennaAlign cell site tiles (data/cells/v1/) from ACMA, ISED, FCC and OpenCelliD, monthly.
 # The builder is scripts/build-cell-sites.py in jbflowerday/antennaalign-app.
 # Secrets: OPENCELLID_TOKEN (OpenCelliD API token), ANTENNAALIGN_APP_TOKEN (read access to the private app repo).
+# FCC sites are carried over from the published tiles if data.fcc.gov refuses the runner (it returns 403).
 # data/au-cell-sites.json is left alone: older app versions still read it.
 name: Cell site tiles
 
@@ -55,7 +56,7 @@ jobs:
       - name: Build tiles
         env:
           OPENCELLID_TOKEN: ${{ secrets.OPENCELLID_TOKEN }}
-        run: python -I app/scripts/build-cell-sites.py --download "$RUNNER_TEMP/sources" --out "$RUNNER_TEMP/cells"
+        run: python -I app/scripts/build-cell-sites.py --download "$RUNNER_TEMP/sources" --reuse data/cells/v1 --out "$RUNNER_TEMP/cells"
 
       - name: Compare site counts with published data
         if: ${{ !inputs.skip_gate }}
